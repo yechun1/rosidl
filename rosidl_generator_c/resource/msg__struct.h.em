@@ -67,20 +67,12 @@ for field in spec.fields:
 @{
 constants = []
 for constant in spec.constants:
-    if constant.type in ['byte', 'char', 'int8', 'uint8', 'int16', 'uint16', 'int32', 'uint32', 'int64', 'uint64']:
-        constants.append((
-            'enum',
-            constant.name,
-            '%s__%s' % (msg_typename, constant.name),
-            primitive_value_to_c(constant.type, constant.value),
-        ))
-    else:
-        constants.append((
-            'static',
-            constant.name,
-            '%s %s' % (constant.type, msg_typename + '__' + constant.name),
-            primitive_value_to_c(constant.type, constant.value),
-        ))
+      constants.append((
+          'static',
+          constant.name,
+          '%s %s' % (constant.type, msg_typename + '__' + constant.name),
+          primitive_value_to_c(constant.type, constant.value),
+      ))
 }@
 @[if includes]@
 // include message dependencies
@@ -92,16 +84,11 @@ for constant in spec.constants:
 @[  end for]@
 
 @[end if]@
+
 @[if constants]@
 // constants defined in the message
 @[  for constant_type, constant_name, key, value in constants]@
 // @(constant_name)
-@[    if constant_type == 'enum']@
-enum
-{
-  @(key) = @(value)
-};
-@[    else]@
 @{
 (const_idl_type, const_c_name) = key.split()
 if const_idl_type == 'string':
@@ -110,7 +97,6 @@ else:
     const_c_type = MSG_TYPE_TO_C[const_idl_type]
 }@
 static const @(const_c_type) @(const_c_name) = @(value);
-@[    end if]@
 @[  end for]@
 
 @[end if]@
