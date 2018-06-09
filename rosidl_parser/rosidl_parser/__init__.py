@@ -388,6 +388,17 @@ class MessageSpecification:
 def parse_message_file(pkg_name, interface_filename):
     basename = os.path.basename(interface_filename)
     msg_name = os.path.splitext(basename)[0]
+
+    print(interface_filename)
+    if interface_filename[-4:] == '.msg':
+        idl_filename = interface_filename[:-4] + '.idl'
+        if os.path.exists(idl_filename):
+            with open(idl_filename, 'r') as h:
+                from rosidl_parser.grammar import parse_message_string \
+                    as parse_message_string2
+                parse_message_string2(
+                    pkg_name, msg_name, h.read())
+
     with open(interface_filename, 'r') as h:
         return parse_message_string(
             pkg_name, msg_name, h.read())
