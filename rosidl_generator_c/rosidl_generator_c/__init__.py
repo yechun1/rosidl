@@ -56,6 +56,7 @@ def generate_c(generator_arguments_file):
                 data = {
                     'spec': spec,
                     'pkg': spec.base_type.pkg_name,
+                    'pkg_upper': spec.base_type.pkg_name.upper(),
                     'msg': spec.msg_name,
                     'type': spec.base_type.type,
                     'subfolder': subfolder,
@@ -67,7 +68,10 @@ def generate_c(generator_arguments_file):
         elif extension == '.srv':
             spec = parse_service_file(args['package_name'], ros_interface_file)
             for template_file, generated_filename in mapping_srvs.items():
-                data = {'spec': spec}
+                data = {
+                    'spec': spec,
+                    'pkg_upper': spec.pkg_name.upper(),
+                }
                 data.update(functions)
                 generated_file = os.path.join(
                     args['output_dir'], subfolder, generated_filename %

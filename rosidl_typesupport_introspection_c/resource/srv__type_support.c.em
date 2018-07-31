@@ -55,7 +55,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspecti
 const rosidl_message_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, @(spec.pkg_name), srv, @(spec.srv_name)_Response)();
 
-ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_@(spec.pkg_name)
+ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_@(pkg_upper)
 const rosidl_service_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(rosidl_typesupport_introspection_c, @(spec.pkg_name), @(spec.srv_name))() {
   if (!@(function_prefix)__@(spec.srv_name)_service_type_support_handle.typesupport_identifier) {

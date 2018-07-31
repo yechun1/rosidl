@@ -201,7 +201,7 @@ static rosidl_message_type_support_t @(function_prefix)__@(spec.base_type.type)_
   get_message_typesupport_handle_function,
 };
 
-ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_@(spec.base_type.pkg_name)
+ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_@(pkg_upper)
 const rosidl_message_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, @(spec.base_type.pkg_name), @(subfolder), @(spec.msg_name))() {
 @[for i, field in enumerate(spec.fields)]@

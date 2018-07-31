@@ -41,7 +41,7 @@ extern "C"
 #include "@(spec.base_type.pkg_name)/msg/rosidl_generator_c__visibility_control.h"
 
 // Forward declare the get type support functions for this type.
-ROSIDL_GENERATOR_C_PUBLIC_@(spec.base_type.pkg_name)
+ROSIDL_GENERATOR_C_PUBLIC_@(pkg_upper)
 const rosidl_message_type_support_t *
   ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_c, @(pkg), @(subfolder), @(type))();
 

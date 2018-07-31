@@ -35,7 +35,7 @@ extern "C"
 {
 #endif
 
-ROSIDL_TYPESUPPORT_INTROSPECTION_C_PUBLIC_@(spec.base_type.pkg_name)
+ROSIDL_TYPESUPPORT_INTROSPECTION_C_PUBLIC_@(pkg_upper)
 const rosidl_message_type_support_t *
   ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, @(spec.base_type.pkg_name), @(subfolder), @(spec.msg_name))();
 

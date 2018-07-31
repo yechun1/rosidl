@@ -54,7 +54,7 @@ extern "C"
  * or use @(msg_typename)__create() to allocate and initialize the message.
  * \return true if initialization was successful, otherwise false
  */
-ROSIDL_GENERATOR_C_PUBLIC_@(spec.base_type.pkg_name)
+ROSIDL_GENERATOR_C_PUBLIC_@(pkg_upper)
 bool
 @(msg_typename)__init(@(msg_typename) * msg);
 
@@ -62,7 +62,7 @@ bool
 /**
  * \param[in,out] msg The allocated message pointer.
  */
-ROSIDL_GENERATOR_C_PUBLIC_@(spec.base_type.pkg_name)
+ROSIDL_GENERATOR_C_PUBLIC_@(pkg_upper)
 void
 @(msg_typename)__fini(@(msg_typename) * msg);
 
@@ -73,7 +73,7 @@ void
  * \return The pointer to the initialized message if successful,
  * otherwise NULL
  */
-ROSIDL_GENERATOR_C_PUBLIC_@(spec.base_type.pkg_name)
+ROSIDL_GENERATOR_C_PUBLIC_@(pkg_upper)
 @(msg_typename) *
 @(msg_typename)__create();
 
@@ -82,7 +82,7 @@ ROSIDL_GENERATOR_C_PUBLIC_@(spec.base_type.pkg_name)
  * It calls @(msg_typename)__fini() and frees the memory of the message.
  * \param[in,out] msg The allocated message pointer.
  */
-ROSIDL_GENERATOR_C_PUBLIC_@(spec.base_type.pkg_name)
+ROSIDL_GENERATOR_C_PUBLIC_@(pkg_upper)
 void
 @(msg_typename)__destroy(@(msg_typename) * msg);
 
@@ -100,7 +100,7 @@ void
  * If the array pointer is valid and the size is zero it is guaranteed
  # to return true.
  */
-ROSIDL_GENERATOR_C_PUBLIC_@(spec.base_type.pkg_name)
+ROSIDL_GENERATOR_C_PUBLIC_@(pkg_upper)
 bool
 @(array_typename)__init(@(array_typename) * array, size_t size);
 
@@ -110,7 +110,7 @@ bool
  * frees the memory for the number of elements.
  * \param[in,out] array The initialized array pointer.
  */
-ROSIDL_GENERATOR_C_PUBLIC_@(spec.base_type.pkg_name)
+ROSIDL_GENERATOR_C_PUBLIC_@(pkg_upper)
 void
 @(array_typename)__fini(@(array_typename) * array);
 
@@ -121,7 +121,7 @@ void
  * \param[in] size The size / capacity of the array.
  * \return The pointer to the initialized array if successful, otherwise NULL
  */
-ROSIDL_GENERATOR_C_PUBLIC_@(spec.base_type.pkg_name)
+ROSIDL_GENERATOR_C_PUBLIC_@(pkg_upper)
 @(array_typename) *
 @(array_typename)__create(size_t size);
 
@@ -131,7 +131,7 @@ ROSIDL_GENERATOR_C_PUBLIC_@(spec.base_type.pkg_name)
  * and frees the memory of the array.
  * \param[in,out] array The initialized array pointer.
  */
-ROSIDL_GENERATOR_C_PUBLIC_@(spec.base_type.pkg_name)
+ROSIDL_GENERATOR_C_PUBLIC_@(pkg_upper)
 void
 @(array_typename)__destroy(@(array_typename) * array);
 
